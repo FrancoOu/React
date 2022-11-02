@@ -13,8 +13,27 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
+        // creating virtual DOM using JSX
         const VDOM = <h1 style={{color: 'blue', backgroundColor:"black", width:"200px"}}>Hello React</h1>
-        ReactDOM.render(VDOM,document.getElementById('test'))
+        
+        // random data
+        const data = [1,2,3]
+
+        // iterate the array and embed it in "<li>" tag
+        const VDOM1 = (
+            <div>
+                <h1>React</h1>
+                    <ul>
+                    {data.map((num)=>{
+                        return <li>{num}</li>
+                    })}
+                    </ul>
+            </div>
+        )
+        const root = ReactDOM.createRoot(document.getElementById('test'));
+
+
+        root.render(VDOM1);
     </script>
 </body>
 </html>
