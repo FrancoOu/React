@@ -13,16 +13,22 @@
     <script src="../js/react-dom.development.js"></script>
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
-        // component component
+        // class component
         // name must starts with capital letter otherwise it will be recognised as a HTML tag.
-        class MyComponent extends React.Component{
 
+        class MyComponent extends React.Component{
+            //must have render() function
+            render(){
+                console.log(this);
+                return <h1>hello from class component!</h1>
+            }
         }
         const root = ReactDOM.createRoot(document.getElementById('test'));
 
 
         // root.render(Demo());
-        root.render(<Demo/>);
+        root.render(<MyComponent/>);
+        //React will create a new instance of MyComponent
 
     </script>
 </body>
