@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+
+        class Person extends React.Component{
+            render() {
+                return (
+                    <div>
+                        <ul>
+                            <li>name: {this.props.name} </li>
+                            <li>gender: {this.props.gender} </li>
+                            <li>age: {this.props.age}</li>
+                        </ul>
+
+                    </div>
+                );
+            }
+        }
+        //limitations on props
+        Person.propTypes = {
+            name: PropTypes.string.isRequired,
+            gender: PropTypes.string,
+            age: PropTypes.number
+        }
+        Person.defaultProps = {
+            age: 18
+
+        }
+        const root = ReactDOM.createRoot(document.getElementById('test'));
+
+        const p = {name: "asd", gender:'male', age:21}
+        //React will create a new instance of MyComponent
+        //props will be passed to component instance by tag parameters
+        // root.render(<Person name="franco" gender="female" age={20}/>)
+        root.render(<Person {...p}/>);
+
+</script>
+</body>
+</html>
