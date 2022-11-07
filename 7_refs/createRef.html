@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+    //string refs are NOT recommended. Some efficiency problems.
+    class Demo extends React.Component{
+
+        myRef = React.createRef()
+        showData = () =>{
+            console.log(this.myRef.current.value)
+            alert(this.myRef.current.value)
+            // alert(this.refs.input1.value)
+
+        }
+
+        //called when focus lost
+        showData2 = () =>{
+            alert(this.input2.value)
+        }
+
+        //React can pass the current Node as a parameter, so we can  pass the node to the component instance.
+        // this here is the component instance itself.
+        render() {
+            return (
+                <div>
+                    {/* assign current node to myRef*/}
+                    <input ref={this.myRef} type="text" placeholder="click"/> &nbsp;
+                    <button ref="button" onClick={this.showData}>click me to show data</button>&nbsp;
+                    <input onBlur={this.showData2} ref={(currentNode) => {
+                        this.input2 = currentNode}} type="text" placeholder="lose focus"/>
+                </div>
+            );
+        }
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('test'));
+
+    // const p = {name: "hello", gender:'male', age:21}
+    //React will create a new instance of MyComponent
+
+    root.render(<Demo/>);
+
+</script>
+</body>
+</html>

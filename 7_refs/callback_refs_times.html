@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+  //string refs are NOT recommended. Some efficiency problems.
+  class Demo extends React.Component{
+
+    state = {isHot:true}
+    showData = () =>{
+
+      alert(this.input1.value)
+
+
+    }
+
+    changeWeather = () =>{
+      const {isHot} = this.state
+      this.setState({isHot: !isHot})
+    }
+
+
+    // 1. React can pass the current Node as a parameter, so we can  pass the node to the component instance.
+    // 2. this here is the component instance itself.
+    // 3. inline function in ref will be called twice during updates
+    render() {
+      return (
+              <div>
+                <h1>today is {this.state.isHot? 'hot':'cold'}</h1>
+                <input ref={(currentNode) => {
+                  this.input1 = currentNode;
+                console.log(currentNode)}
+                } type="text" placeholder="click"/> &nbsp;
+                <button  ref="button" onClick={this.showData}>click me to show data</button>
+
+                <button onClick={this.changeWeather} ref="button" >click me to change weather</button>
+              </div>
+      );
+    }
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById('test'));
+
+  // const p = {name: "hello", gender:'male', age:21}
+  //React will create a new instance of MyComponent
+
+  root.render(<Demo/>);
+
+</script>
+</body>
+</html>
