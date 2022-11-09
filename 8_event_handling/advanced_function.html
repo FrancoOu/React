@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+
+  class Login extends React.Component {
+
+    state = {
+      username:"",
+      password:""
+    }
+
+    // saveUsername = (event) => {
+    //
+    //   this.setState({username:event.target.value})
+    // }
+    //
+    // savePassword = (event) => {
+    //
+    //   this.setState({password:event.target.value})
+    // }
+
+    handleSubmit = (event) =>{
+      event.preventDefault()
+      const {username, password} = this.state
+      alert(`your username is: ${username}, your password is: ${password}`)
+    }
+
+    //pass dataType as a parameter and return a function
+    //this is an advanced function(returning a new function)
+    saveFormData = (dataType) =>{
+      return (event) =>{
+          // console.log(event)
+          this.setState({[dataType]: event.target.value})
+      }
+
+    }
+    render() {
+      return (
+              <div>
+                <form action="https://www.google.com" onSubmit={this.handleSubmit}>
+                  Username: <input onChange={this.saveFormData("username")} type="text" name="username"/>
+                  Password: <input onChange={this.saveFormData("password")} type="password" name="password"/>
+                  <button>Log in</button>
+
+                </form>
+              </div>
+      );
+    }
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById('test'));
+
+  // const p = {name: "hello", gender:'male', age:21}
+  //React will create a new instance of MyComponent
+
+  root.render(<Login/>);
+
+</script>
+</body>
+</html>
