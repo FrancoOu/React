@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+
+    class Life extends React.Component{
+        state = {opacity: 0.5, count:1}
+
+        kill = ()=>{
+            root.unmount()
+        }
+
+        add = () => {
+            const {count} = this.state
+            if(count < 10){
+                this.setState({count: count+1})
+                console.log('add'+this.state.count)
+            }
+        }
+
+        subtract = () => {
+            const {count} = this.state
+            this.setState({count: count-1})
+            console.log('sub'+this.state.count)
+
+        }
+
+        // UNSAFE_componentWillMount(){
+        //
+        // }
+
+        // should be declared as a static method
+        // will return a new state
+        // use it if state depends on props
+        static getDerivedStateFromProps(props, state){
+
+            return state
+        }
+
+        //return a boolean indicating whether the component can be updated
+        shouldComponentUpdate() {
+            console.log("should update"+this.state.count)
+            return true
+        }
+
+
+
+        // UNSAFE_componentWillUpdate(){
+        //     console.log("will update")
+        // }
+
+        //render(){
+        // }
+
+        // return a snapshot value, and it will be passed to componentDidUpdate as a parameter
+        getSnapshotBeforeUpdate(prevProps, prevState){
+            console.log('snapshot')
+
+            return 'nihao'
+        }
+
+
+        componentDidUpdate(prevProps, prevState, snapshot){
+            console.log("did update" + this.state.count,snapshot)
+
+        }
+
+        render() {
+            return (
+                <div>
+                    <h2 style={{opacity:this.state.opacity}}>How to learn React?</h2>
+                    <h3>{this.state.count}</h3>
+                    <button onClick={this.kill}>IDK</button>
+                    <button onClick={this.add}>+1</button>
+                    <button onClick={this.subtract}>-1</button>
+                </div>
+            );
+        }
+
+        //called when component has been mounted
+        componentDidMount(){
+            alert('mounted!')
+            // // change the opacity over time.
+            // this.timer = setInterval(()=>{
+            //     let {opacity}  = this.state
+            //     opacity -= 0.1
+            //     if (opacity <= 0) opacity = 1
+            //     this.setState({opacity})
+            // },200)
+        }
+
+        //called before being unmounted
+        componentWillUnmount(){
+            // clearInterval(this.timer)
+        }
+    }
+
+
+    const root = ReactDOM.createRoot(document.getElementById('test'));
+
+
+
+    root.render(<Life name='hello'/>);
+
+</script>
+</body>
+</html>
