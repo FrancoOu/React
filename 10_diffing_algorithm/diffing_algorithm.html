@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<!--type checking on prop-->
+<script src="../js/prop-types.js"></script>
+
+<script type="text/babel">
+    class Time extends React.Component {
+
+        state = {date: new Date()}
+
+        componentDidMount(){
+            setInterval(()=>{
+                this.setState({date: new Date()})
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <h1>hello</h1>
+                    <input type="text"/>
+                    <span>
+                        now is {this.state.date.toTimeString()}
+                    </span>
+                </div>
+            )
+        }
+    }
+    const root = ReactDOM.createRoot(document.getElementById("test"));
+    root.render(<Time/>);
+</script>
+</body>
+</html>
