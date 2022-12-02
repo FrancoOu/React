@@ -21,12 +21,14 @@ export default class App extends Component {
 
     deleteTodo = (id) => {
         return ()=> {
-            const {todos} = this.state
-            const newTodos = todos.filter((todo) =>
-                todo.id !== id
-            )
-            console.log(newTodos)
-            this.setState({todos: newTodos})
+            if (window.confirm("delete?")) {
+                const {todos} = this.state
+                const newTodos = todos.filter((todo) =>
+                    todo.id !== id
+                )
+                console.log(newTodos)
+                this.setState({todos: newTodos})
+            }
         }
     }
 
@@ -43,14 +45,16 @@ export default class App extends Component {
     }
 
     deleteDoneTodo = () => {
-        const {todos} = this.state
-        // console.log(todos)
-        const newTodos = todos.filter((todo) => {
-                return todo.done !== true
-            }
-        )
-        console.log(newTodos)
-        this.setState({todos: newTodos})
+        if(window.confirm("delete all finished tasks?")) {
+            const {todos} = this.state
+            // console.log(todos)
+            const newTodos = todos.filter((todo) => {
+                    return todo.done !== true
+                }
+            )
+            console.log(newTodos)
+            this.setState({todos: newTodos})
+        }
     }
 
     render() {
