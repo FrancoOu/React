@@ -10,9 +10,8 @@ class Item extends Component {
     }
 
     update = ()=> {
-        console.log('update')
+        // console.log('update')
         return (event) =>{
-            console.log('update - e')
 
             this.props.updateTodo(this.props.id, event.target.checked)
         }
@@ -24,7 +23,7 @@ class Item extends Component {
             <div>
                 <li style={{backgroundColor: this.state.mouse ? '#ddd': 'white'}} onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
                     <label>
-                        <input type="checkbox" defaultChecked={this.props.done} onChange={this.update()}/>
+                        <input type="checkbox" checked={this.props.done} onChange={this.update()}/>
                         <span>{this.props.name}</span>
                     </label>
                     <button onClick={this.props.deleteTodo(this.props.id)} className="btn btn-danger" style={{display: this.state.mouse? 'block':'none'}}>删除</button>
