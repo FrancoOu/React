@@ -67,7 +67,7 @@ export default class App extends Component {
                     {/*same as the previous callback addTodo.
                     here we pass this.deleteTodo to List component and then in List component we pass it to the Item
                     component, so that we can delete in Item component*/}
-                    <List todos={this.state.todos} deleteTodo={this.deleteTodo} updateTodo={this.updateTodo}/>
+                    <List todos={this.state.todos} deleteTodo={this.deleteTodo} updateTodo={1}/>
                     <Footer deleteDoneTodo={this.deleteDoneTodo}/>
                 </div>
             </div>
