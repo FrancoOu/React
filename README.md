@@ -24,7 +24,11 @@ rcc -> create a class component
 
 #### 3/12/2022 - 6/12/2022
 
-1. Literally did noting but resting and was going through a shoulder strain which fxxked me up..
+1. Literally did nothing but resting and was going through a shoulder strain which fxxked me up..
 2. Went for k.dot's concert on Monday (5/12/2022). And that was sooooo fucking dope!
 3. Will continue on React starting from 7/12/2022.
+
+#### 8/12/2022
+1. Proxy Setup in React(Used when requesting data from servers): https://create-react-app.dev/docs/proxying-api-requests-in-development/ 
+2. for reference: [setupProxy.js](react_app/4_src_proxy/setupProxy.js)
 

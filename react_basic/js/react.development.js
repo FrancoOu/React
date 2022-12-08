@@ -17,7 +17,7 @@
 
     // ATTENTION
     // When adding new symbols to this file,
-    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+    // Please consider also adding to 'react-devtools-shared/3_src_todo_list/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types.
     var REACT_ELEMENT_TYPE = Symbol.for('react.element');
     var REACT_PORTAL_TYPE = Symbol.for('react.portal');
