@@ -1,0 +1,54 @@
+import React, {Component} from 'react';
+import axios from "axios";
+
+class Search extends Component {
+
+    state = {keyword: ""}
+
+    handleInputChange = (e) => {
+        // console.log(e.target.value)
+        this.setState({keyword: e.target.value})
+    }
+
+    search = () =>{
+        if(this.state.keyword.trim() === ''){
+            alert("Empty Input!")
+            return
+        }
+        this.props.updateAppState({isFirst:false,isLoading:true})
+        axios.get('/api1/search/users?q=' + this.state.keyword).then(
+            r => {
+                // console.log(r.data)
+                this.props.updateAppState({isLoading:false,users:r.data.items})
+                },
+            e => this.props.updateAppState({isLoading:false,err:e.message})
+        )
+    }
+
+    enterKey = (e) =>{
+        if(this.state.keyword.trim() === ''){
+            alert("Empty Input!")
+            return
+        }
+            console.log(e.key)
+            if (e.key === 'Enter'){
+                this.search()
+            }
+
+    }
+    render() {
+        return (
+            <div>
+                <section className="jumbotron">
+                    <h3 className="jumbotron-heading">Search Github Users</h3>
+                    <div>
+                        <input onKeyUp={this.enterKey} type="text" placeholder="enter the name you search" onChange={this.handleInputChange}/>&nbsp;
+                        <button onClick={this.search} >Search</button>
+                    </div>
+                </section>
+            </div>
+        );
+    }
+}
+
+export default Search;

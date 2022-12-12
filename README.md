@@ -32,3 +32,7 @@ rcc -> create a class component
 1. Proxy Setup in React(Used when requesting data from servers): https://create-react-app.dev/docs/proxying-api-requests-in-development/ 
 2. for reference: [setupProxy.js](react_app/4_src_proxy/setupProxy.js)
 
+#### 11/12/2022
+1. created the static components for searching github users
+
+
