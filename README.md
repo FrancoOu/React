@@ -35,4 +35,7 @@ rcc -> create a class component
 #### 11/12/2022
 1. created the static components for searching github users
 
+#### 12/12/2022
+1. github user search done
+2. using pubsub-js for passing data between components instead of passing by props
 
