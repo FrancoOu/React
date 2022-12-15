@@ -39,3 +39,10 @@ rcc -> create a class component
 1. github user search done
 2. using pubsub-js for passing data between components instead of passing by props
 
+#### 13-14/12/2022
+1. Attended 2 graduation ceremonies :)
+
+#### 15/12/2022
+1. "react-router-dom": "^5.3.4" (latest should be ^6.0.0)
+2. Router component should be the outermost tag
+
