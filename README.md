@@ -45,4 +45,8 @@ rcc -> create a class component
 #### 15/12/2022
 1. "react-router-dom": "^5.3.4" (latest should be ^6.0.0)
 2. Router component should be the outermost tag
+3. ```
+   <Demo>Hello React</Demo>
+   'Hello React' will be passed to the component in props as 'children'
+   ```
 
