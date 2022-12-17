@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {Route, Switch} from 'react-router-dom';
+import {NavLink, Route, Switch} from 'react-router-dom';
 import About from "./pages/About/About"; //router component
 import Home from "./pages/Home/Home"; //router component
 import Header from "./component/Header/Header"; // custom component
@@ -25,8 +25,8 @@ export default class App extends Component {
 
                                 {/*router should be applied here*/}
 
-                                <MyNavLink to='/franco/about'>About</MyNavLink>
-                                <MyNavLink to='/franco/home'>Home</MyNavLink>
+                                <MyNavLink to='/about'>About</MyNavLink>
+                                <MyNavLink to='/home'>Home</MyNavLink>
                             </div>
                         </div>
                         <div className="col-xs-6">
@@ -36,8 +36,8 @@ export default class App extends Component {
                                     {/* A <Switch> looks through its children <Route>s and
                                         renders the first one that matches the current URL. */}
                                     <Switch>
-                                    <Route path='/franco/about' component={About}/>
-                                    <Route path='/franco/home' component={Home}/>
+                                    <Route path='/about' component={About}/>
+                                    <Route path='/home' component={Home}/>
                                     </Switch>
                                 </div>
                             </div>
