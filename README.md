@@ -50,3 +50,8 @@ rcc -> create a class component
    'Hello React' will be passed to the component in props as 'children'
    ```
 
+#### 19/12/2022
+1. Happy Graduation!
+
+#### 22/12/2022
+1. <Redirect/> can be used for the default page.
