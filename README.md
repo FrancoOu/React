@@ -58,3 +58,5 @@ rcc -> create a class component
 
 #### 23/12/2022
 1. Nested router
+2. Pass parameters to route component
+3. Passing through **state** will not show the parameters in url

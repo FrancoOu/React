@@ -21,11 +21,9 @@ class Message extends Component {
                             {/*pass parameters */}
                             {/*<Link to={`/home/message/detail/${message.id}/${message.title}`}>{message.title}</Link>*/}
 
-                            {/*query parameters*/}
-                            {/*<Link to={`/home/message/detail?id=${message.id}&title=${message.title}`}>{message.title}</Link>*/}
+                        {/*query parameters*/}
+                            <Link to={`/home/message/detail?id=${message.id}&title=${message.title}`}>{message.title}</Link>
 
-                            {/*state parameters    */}
-                            <Link to={{pathname:'/home/message/detail', state:{id:message.id, title:message.title}}}>{message.title}</Link>
                         </li>
                         )
                     })}
@@ -34,10 +32,7 @@ class Message extends Component {
                 {/*receive the parameters*/}
                 {/*<Route path='/home/message/detail/:id/:title' component={Detail}></Route>*/}
 
-                {/*<Route path='/home/message/detail' component={Detail}></Route>*/}
-
                 <Route path='/home/message/detail' component={Detail}></Route>
-
 
 
             </div>

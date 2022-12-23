@@ -12,10 +12,10 @@ class Home extends Component {
                 <div>
                     <ul className="nav nav-tabs">
                         <li>
-                            <MyNavLink  to="/home/news">News</MyNavLink>
+                            <MyNavLink  to="news">News</MyNavLink>
                         </li>
                         <li>
-                            <MyNavLink  to="/home/message">Message</MyNavLink>
+                            <MyNavLink  to="message">Message</MyNavLink>
                         </li>
                     </ul>
                     <Switch>
