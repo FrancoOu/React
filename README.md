@@ -54,7 +54,7 @@ rcc -> create a class component
 1. Happy Graduation!
 
 #### 22/12/2022
-1. <Redirect/> can be used for the default page.
+1. ```<Redirect/>``` can be used for the default page.
 
 #### 23/12/2022
 1. Nested router
