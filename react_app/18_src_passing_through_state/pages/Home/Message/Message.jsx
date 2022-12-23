@@ -25,7 +25,7 @@ class Message extends Component {
                             {/*<Link to={`/home/message/detail?id=${message.id}&title=${message.title}`}>{message.title}</Link>*/}
 
                             {/*state parameters    */}
-                            <Link replace to={{pathname:'/home/message/detail', state:{id:message.id, title:message.title}}}>{message.title}</Link>
+                            <Link to={{pathname:'/home/message/detail', state:{id:message.id, title:message.title}}}>{message.title}</Link>
                         </li>
                         )
                     })}
