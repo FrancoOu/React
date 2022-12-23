@@ -60,3 +60,4 @@ rcc -> create a class component
 1. Nested router
 2. Pass parameters to route component
 3. Passing through **state** will not show the parameters in url
+4. programmatic routing basically depends on **props.history.push()/replace()/goBack()/goForward()** 

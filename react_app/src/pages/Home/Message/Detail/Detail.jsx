@@ -10,14 +10,14 @@ class Detail extends Component {
     render() {
 
         //get the params from props
-        // const {id,title} = this.props.match.params
+        const {id,title} = this.props.match.params
 
         //get query params and covert it to object
         // const {search} = this.props.location
         // const {id, title} = qs.parse(search.slice(1))
 
         //get state params
-        const {id, title} = this.props.location.state
+        // const {id, title} = this.props.location.state
         console.log(typeof id)
         const message = messageContent.find((message) =>{
             console.log(typeof message.id)
