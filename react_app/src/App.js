@@ -26,7 +26,7 @@ export default class App extends Component {
                                 {/*router should be applied here*/}
 
                                 <MyNavLink to='/about'>About</MyNavLink>
-                                <MyNavLink to='/home'>Home</MyNavLink>
+                                <MyNavLink to='/home/'>Home</MyNavLink>
                             </div>
                         </div>
                         <div className="col-xs-6">
