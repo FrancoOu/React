@@ -1,57 +1,38 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
+import {Button, DatePicker, Space} from "antd";
+import {LinkedinOutlined} from '@ant-design/icons'
+class App extends Component {
 
-import {Redirect, Route, Switch} from 'react-router-dom';
-import About from "./pages/About/About"; //router component
-import Home from "./pages/Home/Home"; //router component
-import Header from "./component/Header/Header"; // custom component
-import MyNavLink from "./component/MyNavLink/MyNavLink";
+    state = {
+        spin: false,
+        dateString:""
+    }
 
-//Create component
-export default class App extends Component {
+    componentDidMount() {
+        setTimeout(()=>{
+            this.setState({spin: true})
+        },1000)
+    }
+
+    dateChange = (date,dateString) => {
+
+            console.log(dateString, date.$d)
+        this.setState({dateString: date.$d.toString()})
+
+    }
 
     render() {
         return (
-            <div>
+           <Space wrap direction={"vertical"}>
+               <DatePicker onChange={this.dateChange} />
+               <Button type='primary'>傻逼</Button>
+               <Button type='link'>click me</Button>
+               <LinkedinOutlined spin={this.state.spin} />
+               <p>{this.state.dateString}</p>
+           </Space>
 
-                    <div className="row">
-                    <Header/>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-2 col-xs-offset-2">
-                            <div className="list-group">
-                                {/* original routing */}
-                                {/*<a className="list-group-item" href="./about.html">About</a>*/}
-                                {/*<a className="list-group-item active" href="./home.html">Home</a>*/}
-
-                                {/*router should be applied here*/}
-
-                                <MyNavLink to='/about'>About</MyNavLink>
-                                <MyNavLink to='/home/'>Home</MyNavLink>
-                            </div>
-                        </div>
-                        <div className="col-xs-6">
-                            <div className="panel">
-                                <div className="panel-body">
-                                    {/*<h3>我是Home的内容</h3>*/}
-                                    {/* A <Switch> looks through its children <Route>s and
-                                        renders the first one that matches the current URL. */}
-                                    <Switch>
-                                        {/*
-                                        exact:
-                                        When true, the active class/style will only be applied if the location is matched exactly.*/}
-                                        <Route path='/about' component={About}/>
-                                        <Route path='/home' component={Home}/>
-                                        <Redirect to={'/about'}/>
-                                    </Switch>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-            </div>
-        );
+        )
     }
-
 }
 
+export default App;
