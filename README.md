@@ -61,3 +61,7 @@ rcc -> create a class component
 2. Pass parameters to route component
 3. Passing through **state** will not show the parameters in url
 4. programmatic routing basically depends on **props.history.push()/replace()/goBack()/goForward()** 
+
+#### 25-26/12/2022
+1. Merry Christmas!
+2. Have gone through some UI components and built a very ugly website including some very basic routing
