@@ -1,4 +1,4 @@
-import {DECREMENT, INCREMENT} from "./constant";
+
 
 
 function countReduer(preState= 0, action){
@@ -7,11 +7,11 @@ function countReduer(preState= 0, action){
     const {type,data} = action
     console.log(type,data)
     switch (type) {
-        case INCREMENT:
+        case 'increment':
 
             return preState + data
 
-        case DECREMENT:
+        case 'decrement':
 
             return preState - data
 

@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import store from "../../redux/store";
+import {createDecrementAction, createIncrementAction} from "../../redux/count_action";
 
 class Count extends Component {
 
 
     increment = () =>{
         const {value} = this.selectedNum
-        store.dispatch({type:'increment',data:value*1})
+        store.dispatch(createIncrementAction(value*1))
 
     }
 
     decrement = () =>{
         const {value} = this.selectedNum
-        store.dispatch({type:'decrement',data:value*1})
+        store.dispatch(createDecrementAction(value*1))
 
     }
 
@@ -20,7 +21,7 @@ class Count extends Component {
         const {value} = this.selectedNum
         const count = store.getState()
         if (count % 2 !== 0) {
-            store.dispatch({type:'increment',data:value*1})
+            store.dispatch(createIncrementAction(value*1))
         }
     }
 
@@ -28,7 +29,7 @@ class Count extends Component {
         const {value} = this.selectedNum
         setTimeout(() => {
 
-            store.dispatch({type:'increment',data:value*1})
+            store.dispatch(createIncrementAction(value*1))
         },500)
 
     }

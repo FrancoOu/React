@@ -68,4 +68,6 @@ rcc -> create a class component
 
 #### 28/12/2022
 1. redux is only responsible for state management, so we need to re-render the page manually
-2. [how redux is used in a component](react_with_redux/3_src_complete_redux/components/Count/Count.jsx)
+2. [how redux is used in a component](react_with_redux/2_src_simple_redux/components/Count/Count.jsx)
+3. must use middleware (thunk) to handle async action in redux
+4. async action will always call a sync action
