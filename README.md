@@ -71,3 +71,5 @@ rcc -> create a class component
 2. [how redux is used in a component](react_with_redux/2_src_simple_redux/components/Count/Count.jsx)
 3. must use middleware (thunk) to handle async action in redux
 4. async action will always call a sync action
+5. UI component cannot use Redux's api but only container component will be communicating with redux
+6. mapStateToProps() mapDispatchToProps()
