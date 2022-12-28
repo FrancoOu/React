@@ -33,6 +33,7 @@ class Count extends Component {
 
     }
 
+    // set listener for state updating and re-render the component after state update
     componentDidMount() {
         store.subscribe(()=>{
             this.setState({})

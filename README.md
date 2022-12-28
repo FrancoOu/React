@@ -65,3 +65,7 @@ rcc -> create a class component
 #### 25-26/12/2022
 1. Merry Christmas!
 2. Have gone through some UI components and built a very ugly website including some very basic routing
+
+#### 28/12/2022
+1. redux is only responsible for state management, so we need to re-render the page manually
+2. [how redux is used in a component](react_with_redux/3_src_complete_redux/components/Count/Count.jsx)
