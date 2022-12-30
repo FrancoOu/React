@@ -73,3 +73,7 @@ rcc -> create a class component
 4. async action will always call a sync action
 5. UI component cannot use Redux's api but only container component will be communicating with redux
 6. mapStateToProps() mapDispatchToProps()
+
+#### 29/12/2022
+1. pass store in [index.js](react_with_redux/7_src_provider/index.js) using **Provider**
+2. UI component can be in the same file with container
