@@ -40,6 +40,7 @@ class Person extends Component {
         return (
             <div>
                 <h1>Person</h1>
+                <h2>Current Sum: {this.props.count}</h2>
                 <input onChange={this.handleNameChange} type="text" placeholder={'name'} value={this.state.name}/>
                 <input onChange={this.handleAgeChange} type="text" placeholder={'age'} value={this.state.age}/>
                 <button onClick={this.addPerson}>add</button>
@@ -58,7 +59,7 @@ class Person extends Component {
     }
 }
 
-const mapStateToProps = state => ({people:state.people})
+const mapStateToProps = state => ({people:state.people, count:state.count})
 
 const mapDispatchToProps = {
 
