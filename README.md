@@ -77,3 +77,6 @@ rcc -> create a class component
 #### 29/12/2022
 1. pass store in [index.js](react_with_redux/7_src_provider/index.js) using **Provider**
 2. UI component can be in the same file with container
+
+### 31/12/2033
+1. [redux dev tools import](react_with_redux/src/redux/store.js)
