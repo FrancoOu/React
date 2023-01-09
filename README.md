@@ -84,3 +84,6 @@ rcc -> create a class component
 #### 1/1/2023
 1. Happy New Year!
 2. [improved by using redux toolkit](react_with_redux/src/redux/store.js)
+
+#### 9/1/2023
+1. lazyload can be used for routing component

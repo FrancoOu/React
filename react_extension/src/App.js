@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Demo from "./components/2_lazyLoad";
+import Demo from "./components/3_hooks";
 import {BrowserRouter} from 'react-router-dom'
 class App extends Component {
     render() {
@@ -7,7 +7,7 @@ class App extends Component {
 
             <BrowserRouter>
 
-                    <Demo/>
+                    <Demo root={this.props.root}/>
 
             </BrowserRouter>
         );
