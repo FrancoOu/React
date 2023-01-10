@@ -91,3 +91,5 @@ rcc -> create a class component
 #### 10/1/2023
 1. shouldComponentUpdate() always return ture -> low efficiency
 2. use PureComponent to avoid re-render if props or state remain the same [PureComponent](react_extension/src/components/6_optimized/index.jsx)
+3. finished the course but still need go through react-router 6.
+4. Time to do a React project lol
