@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Demo from "./components/3_hooks";
+import Demo from "./components/5_context";
 import {BrowserRouter} from 'react-router-dom'
 class App extends Component {
     render() {
